@@ -121,7 +121,7 @@ int main(){
     g.incorrectBFStraversal('a');
     cout<<endl;
 
-    //CORRECT WAY OF BST TRAVERSAL
+    //CORRECT WAY OF BFS TRAVERSAL
     unordered_map<char,bool>Visited;
     for(char ch='a';ch<='g';ch++){
         if(!Visited[ch])
