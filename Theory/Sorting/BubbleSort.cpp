@@ -3,21 +3,33 @@ using namespace std;
 #include<bits/stdc++.h>
 
 int main(){
-    vector<int>arr={1,4,6,2,4,8,6,9,0,2};
-    //Suppose we are sorting in ascending order 
-    //in bubble sort we are placing the greatest element at last position 
-    //therefore after k iterations k greatest elements will be at the last of the array
-    int n=arr.size();
+    int n;
+    cin>>n;
+    vector<int>arr(n);
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    vector<int>arr1(arr);
+    vector<int>arr2(arr);
+    int c1=0;
+    int c2=0;
     for(int i=0;i<n-1;i++){
         for(int j=0;j<n-i-1;j++){
-            if(arr[j]>arr[j+1]){
-                swap(arr[j],arr[j+1]);
+            if(arr1[j]>arr1[j+1]){
+                swap(arr1[j],arr1[j+1]);
+                c1++;
+            }
+        }
+    }
+    for(int i=0;i<n-1;i++){
+        for(int j=0;j<n-i-1;j++){
+            if(arr2[j]<arr2[j+1]){
+                swap(arr2[j],arr2[j+1]);
+                c2++;
             }
         }
     }
 
-    for(int i=0;i<arr.size();i++){
-        cout<<arr[i]<<" ";
-    }
-    cout<<endl;
+    int ans=min(c1,c2);
+    cout<<ans<<endl;
 }
